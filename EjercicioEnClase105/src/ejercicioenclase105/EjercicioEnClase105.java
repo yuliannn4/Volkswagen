@@ -20,7 +20,11 @@ El vendedor debería :
        String cliente ="";
        int dni=0;
        long telefono =0;
-       
+       String gama ="";
+       String gamaSeleccionada="";
+       String planseleccionado="";
+       String auto="";
+       String autoSeleccionado="";
        
        //ingresando los datos
        
@@ -54,7 +58,66 @@ El vendedor debería :
         int gamaIntermedia []= {1400000, 1500000, 1600000};
         int gamaAlta []= {1700000, 1800000, 1900000};
         
+        System.out.println("Modelos Disoponibles");
+            for (int i=0; i< modelos.length; i++){
+             System.out.println((i + 1) + ". " + modelos[i]);
+             
+            }
+            
+        System.out.print("Selecciona un MODELO: ");
+
+        auto=obtenerDatos.nextLine();    
+        
+        System.out.println("\n");
+            
+        switch(auto){
+            case "1": autoSeleccionado="POLO";
+            break;
+            case "2": autoSeleccionado="VENTUS";
+            break;
+            case "3": autoSeleccionado="VIRTUS";
+            break;   
+        }
+            
+            
+        System.out.println("Gamas disponibles: ");
+        System.out.println("1- BASICO");
+        System.out.println("2- INTERMEDIO");
+        System.out.println("3- ALTA");
+        System.out.print("Selecciona una GAMA: ");
+        gama=obtenerDatos.nextLine();
+        switch(gama){
+            case "1": gamaSeleccionada="BASICA";
+            break;
+            case "2": gamaSeleccionada="INTERMEDIA";
+            break;
+            case "3": gamaSeleccionada="AVANZADA";
+            break;   
+        }
+
+System.out.println("\n");
+            
+            String planes []= {"Efectivo" , "70 30" , "80 20" , "100% financiado"};
+                System.out.println("Planes disponibles ");
+                    for (int p = 0; p < planes.length; p++) {
+                        System.out.println((p + 1) + ". " + planes[p]);
+                    }   
+           System.out.print("Selecciona un PLAN: ");
+            Scanner sel = new Scanner(System.in);
+            int seleccion = sel.nextInt();
+            
+System.out.println("\n");            
+            
+                if(seleccion >=1 && seleccion <= planes.length){
+                    planseleccionado = planes[seleccion-1];
+                        System.out.println("Elegiste el modelo " + autoSeleccionado +", gama " + gamaSeleccionada+ ", plan " + planseleccionado  );
+                }
+            
+}
+                    
+
+                
        
     }
     
-}
+
